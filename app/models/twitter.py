@@ -15,15 +15,17 @@ def api_call():
     auth.set_access_token(access_token, access_token_secret)
     #Creating the API object while passing in auth information
     api = tweepy.API(auth)
-    results = api.search(q="puppy",result_type="popular")
+    results = api.search(q="gif")
+    #result_type="popular"
     # tweets = results[0]
     for tweet in results:
-        print(tweet)
     #     # print(tweet.media_url)
 
     #     # print(f"{tweet.user.name}:{tweet.extended_entities.media}")
         data_tweets = f"{tweet.user.name}:{tweet.text}"
         return data_tweets
+
+print(api_call())
 # json_str = json.dumps(tweets._json)
 
 
